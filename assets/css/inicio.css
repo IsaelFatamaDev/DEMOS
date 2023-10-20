@@ -1,0 +1,129 @@
+:root {
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+    --headline-color: #1b3358;
+    --nav-color: #E8F8FB;
+    --active-color: rgb(144, 5, 5);
+    --text-color: #000000;
+    --portada-color: #fff;
+    --main-color: #ff9f0f;
+    --botton-color: #49BCD8;
+
+    --h1-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+    --font: "Poppins", sans-serif;
+}
+
+/* APRENDIZAJE INNOVADOR */
+body {
+    font-family: var(--font);
+}
+
+.hero-section {
+    height: 600px;
+    align-items: center;
+    display: flex;
+    background-color: var(--nav-color);
+}
+
+.imagen-hero {
+    width: 780px;
+    height: auto;
+    border-radius: 70px;
+}
+
+.h1-text {
+    border-bottom: 9px solid var(--headline-color);
+    display: inline-flex;
+    padding: 20px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#noticia {
+    display: flex;
+    padding: 104.088px 58px 129.912px 58px;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonio {
+
+    padding: 101px 191px;
+    background-color: var(--nav-color);
+}
+
+.custom-image-style {
+    border-radius: 10px;
+    border: 4px solid #1B3358;
+    background: #D9D9D9;
+}
+
+.titulo-noticia {
+    text-align: center;
+    text-shadow: 0px 5px 8px rgba(0, 0, 0, 0.25);
+}
+
+.noticia-title {
+    display: flex;
+    padding-right: 0px;
+    align-items: center;
+    border-bottom: 5px solid #081D6A;
+    text-align: center;
+}
+
+.section-testimonio {
+    margin-bottom: 30px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1800px) {
+    .home {
+        padding: 50px 8% 40px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .home {
+        padding: 45px 5% 35px;
+        height: 90vh;
+    }
+
+    .hero-section {
+        align-items: center;
+        text-align: center;
+    }
+
+    :root {
+        --h1-font: 4.6rem;
+        --h2-font: 2.8rem;
+        --p-font: 15px;
+    }
+}
+
+@media(max-width: 800px) {
+    .home {
+        padding: 25px 4% 20px;
+    }
+
+    .hero-section {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    :root {
+        --h1-font: 2.3rem;
+        --h2-font: 1.4rem;
+        --p-font: 5px;
+    }
+
+    .testimonio {
+        padding: 40px;
+    }
+}

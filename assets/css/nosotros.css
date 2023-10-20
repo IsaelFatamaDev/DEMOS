@@ -1,0 +1,18 @@
+:root {
+    --black-color: hsl(220, 24%, 12%);
+    --black-color-light: hsl(220, 24%, 15%);
+    --black-color-lighten: hsl(220, 20%, 18%);
+    --white-color: #fff;
+    --body-color: hsl(220, 100%, 97%);
+    --headline-color: #1b3358;
+    --nav-color: rgb(202, 231, 255);
+    --active-color: rgb(144, 5, 5);
+    --text-color: #000000;
+    --portada-color: #fff;
+    --main-color: #ff9f0f;
+    --botton-color: #49BCD8;
+
+    --h1-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+}
