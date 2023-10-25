@@ -40,6 +40,8 @@ footer .footer-container .links ul li a {
   display: inline-block;
 }
 
+
+
 footer .footer-container .contact .info {
   position: relative;
 }
@@ -48,19 +50,19 @@ footer .footer-container .contact .info li {
   font-weight: bold;
   display: grid;
   margin-bottom: 20px;
+  grid-template-columns: 30px 1fr;
 }
 
 footer .footer-container .contact .info li span {
   font-size: 15px;
+  color: gray;
 }
 
 footer .footer-container .contact .info li a {
   text-decoration: none;
 }
 
-.contact a i {
-  margin-right: 20px;
-}
+
 
 .copy {
   width: 100%;
@@ -70,6 +72,8 @@ footer .footer-container .contact .info li a {
   color: #555;
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
+
+@media (max-width:1544) {}
 
 @media (max-width: 991px) {
   footer {

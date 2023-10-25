@@ -85,3 +85,8 @@ header {
     font-weight: bold;
     border-radius: 10px;
 }
+
+::-webkit-scrollbar-thumb {
+    background: var(--headline-color);
+    border-radius: 50px;
+}

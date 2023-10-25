@@ -20,8 +20,9 @@ CREATE TABLE FORMULARIO (
 CREATE TABLE FECHAS_CIVICAS (
     id int  NOT NULL AUTO_INCREMENT,
     fecha date  NOT NULL,
+    nombre varchar(60)  NOT NULL,
     descripcion varchar(200)  NOT NULL,
-    activo char(1) NOT NULL DEFAULT ('I'),
+    activo char(1)  NOT NULL DEFAULT 'A',
     CONSTRAINT FECHAS_CIVICAS_pk PRIMARY KEY (id),
 	CONSTRAINT FECHA_UNICA UNIQUE (fecha)
 );
@@ -33,9 +34,9 @@ CREATE TABLE Usuarios (
     apellido VARCHAR(50) NOT NULL,
     correo VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    activo BOOLEAN DEFAULT TRUE,
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    activo CHAR(1) DEFAULT 'A',
+    fecha_registro DATE DEFAULT now(),
+    fecha_actualizacion DATE DEFAULT now(),
     
     -- Restricciones de contraseñas seguras (longitud mínima, complejidad, etc.)
     CHECK (CHAR_LENGTH(password) >= 8),
@@ -44,8 +45,14 @@ CREATE TABLE Usuarios (
     CHECK (password REGEXP '[0-9]'),
 
     -- Restricción para el formato de correo electrónico
-    CHECK (correo REGEXP '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$')
+    CHECK (correo REGEXP '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$'),
+
+    -- Restricción para las fechas
+    CHECK (fecha_registro >= '2020-01-01'),
+    CHECK (fecha_actualizacion >= '2020-01-01')
 );
+
+SELECT * FROM USUARIOS;
 
 DROP TABLE USUARIOS;
 -- Datos de ejemplo
@@ -56,14 +63,13 @@ INSERT INTO Usuarios (nombre, apellido, correo, password) VALUES
 SELECT * FROM USUARIOS;
 
 INSERT INTO FORMULARIO (nombres, apellidos, email, telefono, asunto, mensaje) 
-VALUES ('Isael', 'Fatama', 'juan@gmail.com', '123456789', 'Consulta', 'Mensaje de prueba');
+VALUES ('Isael', 'Fatama', 'isael.fatama@gmail.com', '123456789', 'Consulta', 'Mensaje de prueba');
 
 SELECT * FROM FORMULARIO;
 
-INSERT INTO FECHAS_CIVICAS (fecha, descripcion)
-VALUES ('2023-07-21', 'Día de la Independencia de Perú'),
-('2023');
+INSERT INTO FECHAS_CIVICAS (fecha, nombre,descripcion)
+VALUES ('2023-07-28', 'Día de la Independencia de Perú', 'En esta fecha se conmemora un año mas de la independencia de nuestro país');
 
 SELECT * FROM FECHAS_CIVICAS;
 
-
+DROP DATABASE JoseCarlosMariategui;
